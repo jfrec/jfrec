@@ -1,0 +1,28 @@
+#recorderHolderDIV {
+  background: -moz-linear-gradient(center top , #D0EFFA, #EEEEEE) repeat scroll 0 0 transparent;
+  border: 2px solid #17AFE5;
+  border-radius: 10px 10px 10px 10px;
+  height: 150px;
+  text-align: center;
+  width: 250px;
+  color: #555555;
+  font-family: Verdana,Arial,sans;
+  font-size: 85%;
+}
+#meterBorder {
+  border: 1px solid black;
+  height: 15px;
+  margin: auto;
+  width: 100px;
+}
+.link {
+  color: blue;
+  cursor: pointer;
+  text-decoration: none;
+}
+.hrBlueLine {
+  background-color: #17AFE5;
+  border: 0 solid #17AFE5;
+  color: #17AFE5;
+  height: 1px;
+}
