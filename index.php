@@ -3,8 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>jfRec demo</title>
-<script type="text/javascript" src="./swfobject.js"></script>
-<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script> 
 <script type="text/javascript" src="./jfrec.js"></script>
 <link rel="stylesheet" type="text/css" href="./jfrec.css" />
 </head>
