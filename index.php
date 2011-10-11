@@ -3,21 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>jfRec demo</title>
-<script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function(){
-   loadJfrec();
-   //loadPermission();
-});
-function loadJfrec(){
-	swfobject.embedSWF("jfrec.swf", "jfrec", "1", "1", "10.0.0", false);
-}
-function loadPermission(){
-	swfobject.embedSWF("setPermissions.swf", "recorderDIV", "215", "138", "10.0.0", false);
-}
-</script>
+<script type="text/javascript" src="./swfobject.js"></script>
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript" src="./jfrec.js"></script>
 <link rel="stylesheet" type="text/css" href="./jfrec.css" />
 </head>
 <body>
@@ -28,9 +16,9 @@ function loadPermission(){
     <div id="meter"></div>
   </div>
   <br>
-  <span class="link"><img title="record" src="images/Player_Record.png"></span>
-  <span class="link"><img title="stop" src="images/Player_Stop.png"></span>
-  <span class="link"><img title="play" src="images/Player_Play.png"></span>
+  <span class="link"><img title="record" id="mic_record" src="images/Player_Record.png"></span>
+  <span class="link"><img title="stop" id="mic_stop" src="images/Player_Save.png"></span>
+  <span class="link"><img title="play" id="mic_play" src="images/Player_Play.png"></span>
   <hr class="hrBlueLine" />
 </div>
 <span id="recorderDIV">&nbsp;</span>
