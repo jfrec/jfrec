@@ -1,0 +1,11 @@
+Installation Steps:
+
+Step1: Unzip the file red5recorder.zip and you will get "red5recorder" directory.
+
+Step2: Upload the "red5recorder" directory into your webapps directory of your red5 installation. Dont change the directory name and keep it "red5recorder".
+
+Step3: Open the file js/recorder.js. Change the flash variables like "server", "filename" with the suitable file names and exact server location.
+
+Step4: Open the index.html file into your browser and start recording.
+
+Step5: After finish click on stop. automatically you will get one .flv file generated under the directory "Streams". The file name by default "recorded_audio.flv". You can change it from the recorder.js.
