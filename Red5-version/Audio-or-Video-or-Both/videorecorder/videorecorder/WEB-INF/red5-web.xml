@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd"><beans>
+  <bean id="placeholderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="location" value="/WEB-INF/red5-web.properties" />
+  </bean>
+  <bean autowire="byType" id="web.context" class="org.red5.server.Context" />
+  <bean id="web.scope" class="org.red5.server.WebScope" init-method="register">
+    <property name="server" ref="red5.server" />
+    <property name="parent" ref="global.scope" />
+    <property name="context" ref="web.context" />
+    <property name="handler" ref="web.handler" />
+    <property name="contextPath" value="${webapp.contextPath}" />
+    <property name="virtualHosts" value="${webapp.virtualHosts}" />
+  </bean>
+  <bean id="web.handler" class="org.red5.core.Application" singleton="true" />
+  <bean id="playbackSecurity" class="org.red5.core.security.PlaybackSecurity" init-method="init">
+    <property name="application" ref="web.handler" />
+    <property name="htmlDomains" value="/WEB-INF/allowedHTMLdomains.txt" />
+    <property name="swfDomains" value="/WEB-INF/allowedSWFdomains.txt" />
+  </bean>
+  <bean id="publishSecurity" class="org.red5.core.security.PublishSecurity" init-method="init">
+    <property name="application" ref="web.handler" />
+    <property name="htmlDomains" value="/WEB-INF/allowedHTMLdomains.txt" />
+    <property name="swfDomains" value="/WEB-INF/allowedSWFdomains.txt" />
+    <property name="publishNames" value="/WEB-INF/allowedPublishNames.txt" />
+    <property name="enablePublish" value="true" />
+  </bean>
+  <bean id="securityLoader" class="org.red5.core.security.SecurityLoader" init-method="init">
+    <property name="application" ref="web.handler" />
+    <property name="playbackSecurity" ref="playbackSecurity" />
+    <property name="publishSecurity" ref="publishSecurity" />
+  </bean>
+  <bean id="streamFilenameGenerator" class="org.red5.core.CustomFilenameGenerator">
+    <property name="recordPath" value="streams/" />
+    <property name="playbackPath" value="streams/" />
+    <property name="absolutePath" value="false" />
+  </bean>
+</beans>
