@@ -1,6 +1,6 @@
 Installation Steps:
 
-Step1: Unzip the file videorecorder.zip and you will get "videorecorder" directory.
+Step1: Download the "videorecorder".
 
 Step2: Upload the "videorecorder" directory into your "webapps" directory of your red5 installation. Dont change the directory name and keep it "videorecorder".
 
