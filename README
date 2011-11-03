@@ -1,3 +1,3 @@
 jfrec stands for Javascript (jquery) Flash recorder
 This application can capture the microphone input and upload the recorded audio to a server
-A red5 version is also in developpement, see this version in the `Red5-version/` directory
+A red5 version is also in developpement, see this version in the `Red5-version/` directory.
