@@ -8,7 +8,7 @@ function thisMovie(movieName) {
 
 function loadTest() {
   var flashvars = {};
-  flashvars.server = "rtmp://192.168.1.106/videorecorder/";
+  flashvars.server = "rtmp://terbox.net/videorecorder/";
   flashvars.filename = "recorded_video";
   flashvars.fps = 10;
   flashvars.noVideo = false;
@@ -19,7 +19,7 @@ function loadTest() {
   flashvars.height = 240;
   flashvars.fps = 15;
   flashvars.rate = 44;
- // flashvars.av_mode = "v"; // a-> Audio audio only | v-> Video only | Default value is audio and video
+  flashvars.av_mode = "a"; // a-> Audio audio only | v-> Video only | Default value is audio and video
 
 
   var params = {};
@@ -45,4 +45,20 @@ function startRecord() {
 function stopRecord() {
  thisMovie('videorecorder').stopRecording();
 // stop the recording of the video
+}
+
+function streaming_started(status_value){
+	//alert(status_value);
+	if($.trim(status_value) == "NetStream.Publish.Start"){
+	  $("#record_status").html("Please Wait...");
+	}else if(status_value == "NetStream.Record.Start"){
+	  $("#record_status").html("Start Recording...");
+	}else if(status_value == "NetStream.Record.Stop"){
+	  $("#record_status").html("Recording completed...");
+	}
+	//NetStream.Publish.Start
+}
+
+function streaming_ended(){
+	alert('Streaming ended.');
 }
